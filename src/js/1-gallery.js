@@ -87,10 +87,11 @@ function createGalleryItemsMarkup(images) {
 }
 
 
-galleryContainer.innerHTML = galleryMarkup;
+galleryList.innerHTML = createGalleryItemsMarkup(images);
 
-const lightbox = new SimpleLightbox('.gallery-link', {
-    captions: true,
-    captionsData: 'alt',
-    captionDelay: 250,
+const lightbox = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionPosition: 'bottom',
+  captionDelay: 250,
+  overlayOpacity: 0.8,
 });
